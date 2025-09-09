@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
+import { IUser } from '../../interfaces/iuser.interface';
+import { RouterLink,RouterModule } from '@angular/router';
 @Component({
   selector: 'app-user-card',
   imports: [],
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './user-card.css'
 })
 export class UserCard {
-
+  @Input() user!: IUser;
 }

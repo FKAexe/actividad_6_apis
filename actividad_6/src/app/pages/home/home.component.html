@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div>
+@for (user of myUsers; track user.id) {
+    <div>
+    <app-user-card [user]="user"></app-user-card>
+    </div>
+  }
+</div>  
