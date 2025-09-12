@@ -1,6 +1,6 @@
 <div class= "container mt-4">
 <div class="row"> 
-@for (user of myUsers; track user.id) {
+@for (user of myUsers; track user._id) {
     <div class="col-md-3">
     <app-user-card [user]="user"></app-user-card>
     </div>

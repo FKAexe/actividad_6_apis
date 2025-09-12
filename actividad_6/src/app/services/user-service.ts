@@ -14,8 +14,8 @@ export class UserService {
     const url = `${this.baseUrl}?page=${page}&per_page=8`;
     return lastValueFrom(this.httpClient.get<IUserResponse>(url));
   }
-  getById(id:number):Promise<IUser>{
-    const url = `${this.baseUrl}/${id}`;
+  getById(_id:number):Promise<IUser>{
+    const url = `${this.baseUrl}/${_id}`;
     return lastValueFrom(this.httpClient.get<IUser>(url));
   }
 }
