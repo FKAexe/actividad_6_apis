@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <div class= "container mt-4">
 <div class="row"> 
 @for (user of myUsers; track user._id) {
@@ -6,4 +7,7 @@
     </div>
   }
 </div>  
+<button (click)="goToPreviousPage()" class="btn btn-primary">Previous</button>
+<button (click)="goToNextPage()"  class="btn btn-primary">Next</button>
+
 </div>

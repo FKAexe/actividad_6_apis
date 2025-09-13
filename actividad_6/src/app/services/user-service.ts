@@ -19,4 +19,15 @@ export class UserService {
     return lastValueFrom(this.httpClient.get<IUser>(url))
 
   }
+  updateUser(_id:string, formValue:Partial<IUser> ):Promise<IUser | undefined>{
+    const url = `${this.baseUrl}/${_id}`;
+    const response = lastValueFrom(this.httpClient.put<IUser | undefined>(url, formValue))
+    console.log(response);
+    return response
+  }
+  newUser(user: Partial<IUser>):Promise<IUser | undefined>{
+    const response = lastValueFrom(this.httpClient.post<IUser | undefined>(this.baseUrl, user))
+    console.log(response)
+    return response
+  }
 }
