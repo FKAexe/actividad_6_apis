@@ -10,12 +10,13 @@ export class UserService {
   private baseUrl = 'https://peticiones.online/api/users';
   httpClient = inject(HttpClient);
 
-  getUsers(page: number):Promise<IUserResponse> {
+  getUsers(page: number):Promise<IUserResponse>{
     const url = `${this.baseUrl}?page=${page}&per_page=8`;
     return lastValueFrom(this.httpClient.get<IUserResponse>(url));
   }
-  getById(_id:number):Promise<IUser>{
+  getById(_id:string):Promise<IUser> | undefined{
     const url = `${this.baseUrl}/${_id}`;
-    return lastValueFrom(this.httpClient.get<IUser>(url));
+    return lastValueFrom(this.httpClient.get<IUser>(url))
+
   }
 }

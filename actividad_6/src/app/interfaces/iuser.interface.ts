@@ -7,7 +7,7 @@ export interface IUserResponse {
   }
   
   export interface IUser {
-    _id: number;
+    _id: string;
     id: number;
     first_name: string;
     last_name: string;
