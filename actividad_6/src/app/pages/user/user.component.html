@@ -1,9 +1,26 @@
-<div class="flex-1">
-    <img [src]='user.image'>
-    <p>{{user.first_name}} {{user.last_name}}</p>
-    <div class="flex-2">
-        <p [routerLink]="['/home']">Volver al listado</p>
-        <p [routerLink]="['/updateuser',user._id]">Actualizar</p>
-        <p>Borrar</p>
+<app-nav></app-nav>
+<div class="container">
+    <div class="row">
+    <div class="col border-end border-2 border-black">
+        <img [src]='user.image'>
     </div>
+    <div class="col ms-4">
+    <p class="fs-2">{{user.first_name}}</p>
+    <p class="fs-2"> {{user.last_name}}</p>   
+    <p><strong>Nombre de usuario:</strong> {{user.username}}</p>
+    <p><strong>Email:</strong> {{user.email}}</p> 
+    <div class="container border-2 border border-black rounded">
+    <div class="row">
+        <div class="col border-end border-2 border-black text-center p-3">
+        <a>Eliminar</a>
+        </div>
+        <div class="col border-end border-2 border-black text-center p-3">
+        <a [routerLink]="['/updateuser',user._id]">Actualizar</a>
+        </div>
+        <div class="col text-center p-3">
+        <a [routerLink]="['/home']">Volver al listado</a>
+        </div>
+    </div>
+    </div>
+</div>
 </div>

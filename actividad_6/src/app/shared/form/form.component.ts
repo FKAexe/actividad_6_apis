@@ -16,7 +16,7 @@ export class FormComponent {
   userService = inject(UserService);
   reactiveForm: FormGroup;
   activatedRoute = inject(ActivatedRoute);
-  isEditMode = false;
+  actualizando = false;
 
   constructor() {
     this.reactiveForm = new FormGroup({
@@ -30,15 +30,14 @@ export class FormComponent {
       ]),
       email: new FormControl(this.user?.email || '',[
         Validators.required,
-        Validators.pattern(/^\w+\@[a-zA-Z_]+?\.[a-zA-Z]{2-12}$/),
+        Validators.email,
       ]),
       image: new FormControl(this.user?.image || '',[
         Validators.required,
-        Validators.minLength(3)])
+        Validators.minLength(3)]),
     
     },[]);
   }
-  
   checkControl(controlName: string, errorName: string) : boolean | undefined {
     return this.reactiveForm.get(controlName)?.hasError(errorName)&& this.reactiveForm.get(controlName)?.touched;
     
@@ -57,11 +56,12 @@ export class FormComponent {
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
       this._id = params['_id'] || null;
-      this.isEditMode = !!this._id;
-      if (this.isEditMode) {
+      this.actualizando = !!this._id;
+      if (this.actualizando) {
         const response = await this.userService.getById(this._id);
         if (response) {
           this.reactiveForm.patchValue(response);
+          console.log(response);
         }
       }
     });

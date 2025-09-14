@@ -1,0 +1,22 @@
+img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%; 
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.small-container{
+    align-content: center;
+}
+
+.col{
+    width: 100%;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
