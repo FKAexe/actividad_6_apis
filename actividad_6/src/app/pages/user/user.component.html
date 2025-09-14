@@ -3,7 +3,7 @@
     <p>{{user.first_name}} {{user.last_name}}</p>
     <div class="flex-2">
         <p [routerLink]="['/home']">Volver al listado</p>
-        <p>Actualizar</p>
+        <p [routerLink]="['/updateuser',user._id]">Actualizar</p>
         <p>Borrar</p>
     </div>
 </div>

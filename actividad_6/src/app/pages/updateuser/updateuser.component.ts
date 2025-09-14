@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { FormComponent } from "../../shared/form/form.component";
+import { IUser } from '../../interfaces/iuser.interface';
+import { UserService } from '../../services/user-service';
 
 @Component({
   selector: 'app-updateuser',
-  imports: [],
+  imports: [FormComponent],
   templateUrl: './updateuser.component.html',
   styleUrl: './updateuser.component.css'
 })
 export class UpdateuserComponent {
-
+  @Input() user! : IUser
+  userService = inject(UserService);
 }
