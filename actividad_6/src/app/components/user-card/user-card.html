@@ -1,9 +1,23 @@
-<div class="flex-1">
-    <img [src]='user.image'>
-    <p>{{user.first_name}} {{user.last_name}}</p>
-    <div class="flex-2">
-        <p [routerLink]="['/user',user._id]">Ver detalles</p>
-        <p [routerLink]="['/updateuser',user._id]">Actualizar</p>
-        <p>Borrar</p>
+<div class="flex-1 p-1 size h-100">
+    <img class="mt-3"[src]='user.image'>
+    <p class="name">{{user.first_name}} {{user.last_name}}</p>
+    <div class="d-flex justify-content-evenly align-items-start text-size w-100">
+    <!-- Ver detalles -->
+    <a [routerLink]="['/user', user._id]" class="text-center flex-2 text-decoration-none text-dark">
+      <i class="icons bi bi-search"></i>
+      <p>Ver detalles</p>
+    </a>
+
+    <!-- Actualizar -->
+    <a [routerLink]="['/updateuser', user._id]" class="text-center flex-2 text-decoration-none text-dark">
+      <i class="icons bi bi-arrow-repeat"></i>
+      <p>Actualizar</p>
+    </a>
+
+    <!-- Borrar -->
+    <div class="text-center flex-2" style="cursor: pointer;">
+      <i class="icons bi bi-trash text-danger"></i>
+      <p class="text-danger">Borrar</p>
     </div>
+  </div>
 </div>

@@ -1,0 +1,19 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.btn{
+    width: 60px;
+    min-height: 60px;
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: .3s;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+a{
+    font-size: 1.2rem;
+    color:black;
+}
+
+svg{
+    height: 40px;
+    width: auto;
+    color: black;
+}

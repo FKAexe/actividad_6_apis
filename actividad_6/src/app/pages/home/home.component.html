@@ -1,13 +1,15 @@
 <app-nav></app-nav>
-<div class= "container mt-4">
-<div class="row"> 
+<div class= "container-lg mt-4">
+<div class="row g-4"> 
 @for (user of myUsers; track user._id) {
     <div class="col-md-3">
     <app-user-card [user]="user"></app-user-card>
     </div>
   }
+</div>
+<div class="button-container mt-4 mb-4">
+<hr>
+<button (click)="goToPreviousPage()" class="btn">1</button>
+<button (click)="goToNextPage()"  class="btn">2</button>
 </div>  
-<button (click)="goToPreviousPage()" class="btn btn-primary">Previous</button>
-<button (click)="goToNextPage()"  class="btn btn-primary">Next</button>
-
 </div>
