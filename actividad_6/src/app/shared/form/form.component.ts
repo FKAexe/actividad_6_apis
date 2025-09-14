@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { IUser } from '../../interfaces/iuser.interface';
 import { UserService } from '../../services/user-service';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -47,10 +48,11 @@ export class FormComponent {
     console.log(formValue);
     if (this.user){
       await this.userService.updateUser(this.user._id, formValue)
-      console.log("actualizado");
+      Swal.fire('Usuario creado', 'El usuario ha sido actualizado satisfactoriamente.', 'success');
     } 
     else{
       await this.userService.newUser(formValue);
+      Swal.fire('Usuario creado', 'El usuario ha sido creado satisfactoriamente.', 'success');
     }
   }
   ngOnInit() {
@@ -61,7 +63,6 @@ export class FormComponent {
         const response = await this.userService.getById(this._id);
         if (response) {
           this.reactiveForm.patchValue(response);
-          console.log(response);
         }
       }
     });

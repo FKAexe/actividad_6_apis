@@ -28,6 +28,12 @@ export class UserService {
     const response = lastValueFrom(this.httpClient.post<IUser | undefined>(this.baseUrl, user))
     console.log(response)
     return response
-    
+  }
+   
+  deleteUser(_id:string):Promise<IUser> | undefined{
+    const url = `${this.baseUrl}/${_id}`;
+    const response = lastValueFrom(this.httpClient.delete<IUser>(url))
+    console.log(response)
+    return response;
   }
 }

@@ -42,7 +42,7 @@
                 <p class="error">La longitud mínima es de 3 caracteres.</p>
             }
         </div>
-        <button type="submit">
+        <button type="submit" [disabled]="reactiveForm.invalid">
             {{ actualizando ? 'Actualizar Usuario' : 'Guardar Usuario' }}
         </button>
     </form>

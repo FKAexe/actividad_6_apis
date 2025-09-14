@@ -11,8 +11,8 @@
     <p><strong>Email:</strong> {{user.email}}</p> 
     <div class="container border-2 border border-black rounded">
     <div class="row">
-        <div class="col border-end border-2 border-black text-center p-3">
-        <a>Eliminar</a>
+        <div class="col border-end border-2 border-black text-center p-3 text-danger">
+        <p (click)="borrarUser(user._id)">Eliminar</p>
         </div>
         <div class="col border-end border-2 border-black text-center p-3">
         <a [routerLink]="['/updateuser',user._id]">Actualizar</a>
